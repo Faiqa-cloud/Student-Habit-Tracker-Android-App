@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/real"
+        android:scaleType="centerCrop"
+        android:alpha="0.89"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#880A0010"/>
+
+
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="52dp"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp">
+
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="#221A0F2E"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Habit Tracker"
+            android:textColor="#C4A8E0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <!-- Progress Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#CC2A1B5E"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today's Habits"
+                    android:textColor="#8B6BA8"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/tvHabitProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 / 0 Done"
+                    android:textColor="#C4A8E0"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Keep going!"
+                    android:textColor="#6B4F8A"
+                    android:textSize="13sp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressHabit"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                app:indicatorColor="#C4A8E0"
+                app:trackColor="#1A0F2E"
+                app:trackThickness="8dp"
+                android:progress="0"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Add Habit -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            style="@style/PurpleInput"
+            android:hint="New habit">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNewHabit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#C4A8E0"
+                android:textSize="15sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddHabit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Add"
+            android:textColor="#130D35"
+            android:textStyle="bold"
+            app:backgroundTint="#C4A8E0"
+            app:cornerRadius="12dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MY HABITS"
+        android:textColor="#C4A8E0"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.15"
+        android:layout_marginBottom="12dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/llHabitList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+    </ScrollView>
+
+</LinearLayout>
+</FrameLayout>
